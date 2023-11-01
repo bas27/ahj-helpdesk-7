@@ -1,4 +1,6 @@
-# Домашнее задание к занятию "7. Работа с HTTP" (Часть 2)
+# Домашнее задание к занятию "7. Работа с HTTP" (Часть 2) [![ahj-helpdesk](https://github.com/bas27/ahj-helpdesk-7/actions/workflows/web.yml/badge.svg)](https://github.com/bas27/ahj-helpdesk-7/actions/workflows/web.yml)
+
+[Ссылка на проект](https://bas27.github.io/ahj-helpdesk-7/)
 
 Правила сдачи задания:
 
