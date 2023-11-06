@@ -11,13 +11,10 @@ function removeTicketCancelButtonHandler(mainContainer) {
 }
 
 function removeTicketOkButtonHandler(mainContainer, currentTicket, serverUrl) {
-  if (!mainContainer) return;
-
   const widgetRemoveTicket = mainContainer.querySelector('[data-widget=removeTicket]');
   const removeTicketOkButton = widgetRemoveTicket.querySelector('[data-id=ok]');
 
   removeTicketOkButton.addEventListener('click', () => {
-    // console.log('click_remove_ok');
     const formData = new FormData();
     formData.append('id', currentTicket.dataset.id);
 
@@ -28,19 +25,15 @@ function removeTicketOkButtonHandler(mainContainer, currentTicket, serverUrl) {
     xhrRemoveTicket.addEventListener('load', () => {
       if (xhrRemoveTicket.status >= 200 && xhrRemoveTicket.status < 300) {
         try {
-          // console.log('ticket deleted');
-          setTimeout(() => {
-            document.body.style.cursor = '';
-            document.location.reload();
-          }, 1000);
+          currentTicket.remove();
+          widgetRemoveTicket.remove();
+          document.body.style.cursor = '';
         } catch (e) {
           console.error(e);
-          // throw e;
         }
       }
     });
 
-    widgetRemoveTicket.remove();
     xhrRemoveTicket.send(formData);
   });
 }

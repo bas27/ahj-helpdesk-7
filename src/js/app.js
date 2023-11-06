@@ -5,8 +5,6 @@ import getEditTicketWidget from './editTicketWidget';
 import changeTicketStatus from './functionChangeTicketStatus';
 import showTicketDescription from './functionShowTicketDescription';
 
-// const port = 7070;// for devserver  work
-// const serverUrl = `http://localhost:${port}`;// for devserver  work
 const serverUrl = 'http://localhost:7070/';
 
 const mainContainer = document.querySelector('.container');

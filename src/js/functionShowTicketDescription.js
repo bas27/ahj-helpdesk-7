@@ -1,9 +1,4 @@
-export default function showTicketDescription(
-  mainContainer,
-  currentTicket,
-  ticketName,
-  serverUrl,
-) {
+export default function showTicketDescription(mainContainer, currentTicket, ticketName, serverUrl) {
   if (mainContainer.querySelector('.modal')) return;
 
   const ticketDescriptionElement = ticketName.closest('.ticket-wrapper').querySelector('.ticket-description');
@@ -20,9 +15,7 @@ export default function showTicketDescription(
   xhrGetDescription.addEventListener('load', () => {
     if (xhrGetDescription.status >= 200 && xhrGetDescription.status < 300) {
       try {
-        // console.log('description recieved');
         const responsedDescription = xhrGetDescription.response;
-        // console.log('xhrGetDescription.response: ', responsedDescription);
         setTimeout(() => {
           document.body.style.cursor = '';
         }, 1000);
@@ -31,7 +24,6 @@ export default function showTicketDescription(
         ticketDescriptionElement.classList.toggle('hidden');
       } catch (e) {
         console.error(e);
-        // throw e;
       }
     }
   });
